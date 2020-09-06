@@ -13,7 +13,7 @@ pipeline {
          	agent { docker 'maven:3-alpine' } 
             	steps {
                		sh 'mvn clean package'
-                    sh 'sudo apk --no-cache add curl'
+                    //sh 'sudo apk --no-cache add curl'
                     //sh 'curl -uhemanth:AP7mUBBRLiPx5iiWXv6eTnijox1 -T target/SimpleTomcatWebApp.war "http://localhost:8081/artifactory/project/SimpleTomcatWebApp.war"'
             }
         }
