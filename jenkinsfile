@@ -14,7 +14,7 @@ pipeline {
             	steps {
                		sh 'mvn clean package'
                     sh 'ls target/'
-                    sh 'curl -uhemanth:AP7mUBBRLiPx5iiWXv6eTnijox1 -T **/SimpleTomcatWebApp.war "http://localhost:8081/artifactory/project/SimpleTomcatWebApp.war"'
+                    sh 'curl -uhemanth:AP7mUBBRLiPx5iiWXv6eTnijox1 -T target/SimpleTomcatWebApp.war "http://localhost:8081/artifactory/project/SimpleTomcatWebApp.war"'
             }
         }
                     stage('deployment') {
