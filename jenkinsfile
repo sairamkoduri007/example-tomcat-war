@@ -13,7 +13,7 @@ pipeline {
          	agent { docker 'maven:3-alpine' } 
             	steps {
                		sh 'mvn clean package'
-                    sh 'ls'
+                    sh 'ls target/'
                     sh 'curl -uhemanth:AP7mUBBRLiPx5iiWXv6eTnijox1 -T **/SimpleTomcatWebApp.war "http://localhost:8081/artifactory/project/SimpleTomcatWebApp.war"'
             }
         }
