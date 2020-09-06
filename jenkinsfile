@@ -22,7 +22,7 @@ pipeline {
             steps {
             sh'''
             pwd
-            ls -lrt
+            ls -lrt target/
             #curl -uhemanth:AP7mUBBRLiPx5iiWXv6eTnijox1 -O "http://localhost:8081/artifactory/project/SimpleTomcatWebApp.war"
             #cp SimpleTomcatWebApp.war /Library/Tomcat/webapps
             #rm SimpleTomcatWebApp.war
