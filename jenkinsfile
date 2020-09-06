@@ -15,6 +15,19 @@ pipeline {
                		sh 'mvn clean package'
                     //sh 'sudo apk --no-cache add curl'
                     //sh 'curl -uhemanth:AP7mUBBRLiPx5iiWXv6eTnijox1 -T target/SimpleTomcatWebApp.war "http://localhost:8081/artifactory/project/SimpleTomcatWebApp.war"'
+                                             rtUpload (
+    serverId: 'artifactory',
+    spec: '''{
+          "files": [
+            {
+              "pattern": "**/SimpleTomcatWebApp.war",
+              "target": "project/"
+            }
+         ]
+    }''',
+    buildName: 'project',
+    buildNumber: '1'
+)
             }
         }
                     stage('deployment') {
