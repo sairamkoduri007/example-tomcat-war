@@ -22,8 +22,8 @@ pipeline {
             steps {
             sh'''
             pwd
-            ls -lrt target/
-            cp target/SimpleTomcatWebApp.war /Library/Tomcat/webapps
+            cd target/
+            cp SimpleTomcatWebApp.war /Library/Tomcat/webapps
             '''
                 }
             }
