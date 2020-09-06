@@ -13,8 +13,8 @@ pipeline {
          	agent { docker 'maven:3-alpine' } 
             	steps {
                		sh 'mvn clean package'
-                    sh 'ls target/'
-                    sh 'curl -uhemanth:AP7mUBBRLiPx5iiWXv6eTnijox1 -T target/SimpleTomcatWebApp.war "http://localhost:8081/artifactory/project/SimpleTomcatWebApp.war"'
+                    sh 'cat /etc/*release'
+                    //sh 'curl -uhemanth:AP7mUBBRLiPx5iiWXv6eTnijox1 -T target/SimpleTomcatWebApp.war "http://localhost:8081/artifactory/project/SimpleTomcatWebApp.war"'
             }
         }
                     stage('deployment') {
@@ -23,9 +23,9 @@ pipeline {
             sh'''
             pwd
             ls -lrt
-            curl -uhemanth:AP7mUBBRLiPx5iiWXv6eTnijox1 -O "http://localhost:8081/artifactory/project/SimpleTomcatWebApp.war"
-            cp SimpleTomcatWebApp.war /Library/Tomcat/webapps
-            rm SimpleTomcatWebApp.war
+            #curl -uhemanth:AP7mUBBRLiPx5iiWXv6eTnijox1 -O "http://localhost:8081/artifactory/project/SimpleTomcatWebApp.war"
+            #cp SimpleTomcatWebApp.war /Library/Tomcat/webapps
+            #rm SimpleTomcatWebApp.war
             '''
                 }
             }
