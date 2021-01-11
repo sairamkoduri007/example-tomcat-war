@@ -1,0 +1,46 @@
+pipeline {
+    agent any
+    stages {
+        stage("code quality"){
+            agent { docker 'sonarqube' } 
+            	steps {
+               		sh '''
+                    echo code quality step
+                    '''
+            }
+        }
+        stage('code build and publish') {
+         	agent { docker 'maven:3-alpine' } 
+            	steps {
+               		sh 'mvn clean package'
+    rtUpload (
+    serverId: 'artifactory',
+    spec: '''{
+          "files": [
+            {
+              "pattern": "**/SimpleTomcatWebApp.war",
+              "target": "project/"
+            }
+         ]
+    }''',
+    buildName: 'project',
+    buildNumber: '1'
+)
+            }
+        }
+                    stage('deployment') {
+                        agent {label 'slave'}
+            steps {
+            sh'''
+            id
+            pwd
+            cd /home/jenkins/
+            ls -lrt
+            curl -uadmin:AP4t14ureDCjuExxrLJxT1BfdLf -O "http://13.58.132.104:8081/artifactory/project/sparkjava-hello-world-1.0.war"
+            curl -uadmin:AP8sbfTfvmAo2xQbpZHnBx2BJWb -O "http://18.219.121.137:8081/artifactory/project/SimpleTomcatWebApp.war"
+            cp sparkjava-hello-world-1.0.war /opt/tomcat/webapps/
+            '''
+                }
+            }
+    }
+}
