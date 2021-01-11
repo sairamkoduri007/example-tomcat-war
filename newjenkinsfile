@@ -1,5 +1,5 @@
 pipeline {
-    agent any
+    agent {label 'slave'}
     stages {
         stage("code quality"){
             agent { docker 'maven:3-alpine' } 
