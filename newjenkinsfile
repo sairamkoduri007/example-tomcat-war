@@ -2,7 +2,7 @@ pipeline {
     agent any
     stages {
         stage("code quality"){
-            agent { docker 'sonarqube' } 
+            agent { docker 'maven:3-alpine' } 
             	steps {
                		sh '''
                     echo code quality step
