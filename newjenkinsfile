@@ -36,9 +36,8 @@ pipeline {
             pwd
             cd /home/jenkins/
             ls -lrt
-            curl -uadmin:AP4t14ureDCjuExxrLJxT1BfdLf -O "http://13.58.132.104:8081/artifactory/project/sparkjava-hello-world-1.0.war"
             curl -uadmin:AP8sbfTfvmAo2xQbpZHnBx2BJWb -O "http://18.219.121.137:8081/artifactory/project/SimpleTomcatWebApp.war"
-            cp sparkjava-hello-world-1.0.war /opt/tomcat/webapps/
+            cp SimpleTomcatWebApp.war /opt/tomcat/webapps/
             '''
                 }
             }
