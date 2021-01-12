@@ -5,3 +5,5 @@ war file to a tomcat 7 server.
 
 editing it for end to end cicd
 
+retrigger
+
