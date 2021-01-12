@@ -36,7 +36,7 @@ pipeline {
             pwd
             cd /home/ubuntu/
             ls -lrt
-            curl -uadmin:AP8sbfTfvmAo2xQbpZHnBx2BJWb -O "http://18.219.121.137:8081/artifactory/project/SimpleTomcatWebApp.war"
+            curl -uadmin:AP8sbfTfvmAo2xQbpZHnBx2BJWb -O "http://18.191.12.98:8081/artifactory/project/SimpleTomcatWebApp.war"
             sudo cp SimpleTomcatWebApp.war /opt/tomcat/apache-tomcat-9.0.41/webapps/
             '''
                 }
