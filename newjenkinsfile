@@ -10,7 +10,7 @@ pipeline {
             }
         }
         stage('code build and publish') {
-         	agent { docker 'maven:3-alpine' } 
+         	agent { abel 'slave' docker 'maven:3-alpine' } 
             	steps {
                		sh 'mvn clean package'
     rtUpload (
