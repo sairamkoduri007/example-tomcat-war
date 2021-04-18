@@ -28,5 +28,16 @@ pipeline {
 )
             }
         }
+                    stage('deployment') {
+                        agent {label 'slave'}
+            steps {
+            sh'''
+            cd /home/ubuntu/
+            ls -lrt
+            curl -uadmin:AP7bJVPWSL5bRS4MMU512St39YE -O "http://13.59.132.16:8081/artifactory/project/SimpleTomcatWebApp.war"
+            sudo cp SimpleTomcatWebApp.war /opt/tomcat/apache-tomcat-9.0.45/webapps/
+            '''
+                }
+            }
     }
 }
