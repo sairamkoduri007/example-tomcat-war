@@ -7,3 +7,5 @@ editing it for end to end cicd
 
 retrigger
 
+auto-trigger demo
+
