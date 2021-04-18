@@ -13,6 +13,19 @@ pipeline {
          	agent { docker 'maven:3-alpine' } 
             	steps {
                		sh 'mvn clean package'
+    rtUpload (
+    serverId: 'artifactory',
+    spec: '''{
+          "files": [
+            {
+              "pattern": "**/SimpleTomcatWebApp.war",
+              "target": "project/"
+            }
+         ]
+    }''',
+    buildName: 'project',
+    buildNumber: '1'
+)
             }
         }
     }
