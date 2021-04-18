@@ -13,33 +13,7 @@ pipeline {
          	agent { docker 'maven:3-alpine' } 
             	steps {
                		sh 'mvn clean package'
-    rtUpload (
-    serverId: 'artifactory',
-    spec: '''{
-          "files": [
-            {
-              "pattern": "**/SimpleTomcatWebApp.war",
-              "target": "project/"
-            }
-         ]
-    }''',
-    buildName: 'project',
-    buildNumber: '1'
-)
             }
         }
-                    stage('deployment') {
-                        agent {label 'slave'}
-            steps {
-            sh'''
-            id
-            pwd
-            cd /home/ubuntu/
-            ls -lrt
-            curl -uadmin:AP7bJVPWSL5bRS4MMU512St39YE -O "http://3.143.248.39:8082/artifactory/project/SimpleTomcatWebApp.war"
-            sudo cp SimpleTomcatWebApp.war /opt/tomcat/apache-tomcat-9.0.45/webapps/
-            '''
-                }
-            }
     }
 }
