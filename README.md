@@ -7,4 +7,4 @@ editing it for end to end cicd
 
 retrigger
 
-auto-trigger demo with pipeline
+auto-trigger demo with pipeline demo for November class
