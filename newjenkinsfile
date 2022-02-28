@@ -29,7 +29,7 @@ pipeline {
             }
         }
                     stage('deployment') {
-                        agent {label 'slave'}
+                        agent {label 'slave1'}
             steps {
             sh'''
             cd /home/ubuntu/
