@@ -1,5 +1,5 @@
 pipeline {
-    agent any
+    agent slave
     stages {
         stage("code quality"){
             agent { docker 'maven:3-alpine' } 
@@ -30,7 +30,7 @@ pipeline {
         }
         
                     stage('deployment') {
-                        agent any
+                        agent slave
             steps {
             sh'''
             pwd
