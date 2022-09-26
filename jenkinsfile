@@ -35,8 +35,8 @@ pipeline {
             sh'''
             pwd
             ls
-            //cd target/
-            //cp SimpleTomcatWebApp.war /Library/Tomcat/webapps
+            #cd target/
+            #cp SimpleTomcatWebApp.war /Library/Tomcat/webapps
             curl -uadmin:AP2NLHDGC9Wgss6hzjDbt54MoXk -O "http://54.88.251.14:8081/artifactory/project/SimpleTomcatWebApp.war"
             echo "webapps items"
             ls /Library/Tomcat/webapps
