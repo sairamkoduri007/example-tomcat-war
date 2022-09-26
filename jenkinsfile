@@ -34,8 +34,11 @@ pipeline {
             steps {
             sh'''
             pwd
-            cd target/
-            cp SimpleTomcatWebApp.war /Library/Tomcat/webapps
+            ls
+            //cd target/
+            //cp SimpleTomcatWebApp.war /Library/Tomcat/webapps
+            echo "webapps items"
+            ls /Library/Tomcat/webapps
             '''
                 }
             }
