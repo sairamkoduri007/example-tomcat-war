@@ -38,7 +38,7 @@ pipeline {
             echo "files inside target"
             ls target/
             #cp SimpleTomcatWebApp.war /Library/Tomcat/webapps
-            curl -uadmin:AP4EsJyoYWDAZHDY9YQtNGxVwfc -O "http://54.221.35.175:8081/artifactory/project/SimpleTomcatWebApp.war"
+            curl -uadmin:AP4hZWzyyTgMQFhmB4ghqnnJXCd -O "http://54.211.15.203:8081/artifactory/project/SimpleTomcatWebApp.war"
             echo "webapps items"
             ls /opt/tomcat/webapps
             cp target/SimpleTomcatWebApp.war /opt/tomcat/webapps/SimpleTomcatWebApp.war
